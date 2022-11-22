@@ -1,0 +1,19 @@
+{
+  "name": "rocketapi/rocketapi",
+  "description": "RocketAPI PHP SDK",
+  "license": "MIT",
+  "authors": [
+    {
+        "name": "RocketAPI"
+    }
+  ],
+  "require": {
+    "ext-curl": "*",
+    "ext-json": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "RocketAPI\\": "src/"
+    }
+  }
+}
