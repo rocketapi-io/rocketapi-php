@@ -1,6 +1,7 @@
 <?php
     require('src/RocketAPI.php');
-    require('src/Exceptions.php');
+    require('src/Exceptions/NotFoundException.php');
+    require('src/Exceptions/BadResponseException.php');
     require('src/InstagramAPI.php');
 
     use RocketAPI\InstagramAPI;
@@ -12,8 +13,8 @@
     try {
         $user = $api->getUserInfo($username);
         print_r($user);
-    } catch (RocketAPI\NotFoundException $e) {
+    } catch (RocketAPI\Exceptions\NotFoundException $e) {
         echo "User $username not found\n";
-    } catch (RocketAPI\BadResponseException $e) {
+    } catch (RocketAPI\Exceptions\BadResponseException $e) {
         echo "Can't get $username info from API\n";
     }

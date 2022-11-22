@@ -12,11 +12,13 @@ curl -sS https://getcomposer.org/installer | php
 ```
 
 Next, run the Composer command to install the RocketAPI PHP Library:
+
 ```bash
 composer require rocketapi/rocketapi
 ```
 
 After installing, you need to require Composer's autoloader:
+
 ```php
 require 'vendor/autoload.php';
 use RocketAPI\InstagramAPI;
