@@ -203,6 +203,16 @@
          * @throws Exceptions\NotFoundException
          * @throws Exceptions\BadResponseException
          */
+        public function getMediaInfoByShortcode($shortcode) {
+            return $this->request('instagram/media/get_info_by_shortcode', [
+                'shortcode' => $shortcode,
+            ]);
+        }
+
+        /**
+         * @throws Exceptions\NotFoundException
+         * @throws Exceptions\BadResponseException
+         */
         public function getMediaLikes($shortcode, $count=12, $max_id=null) {
             $payload = ['shortcode' => $shortcode, 'count' => $count];
             if ($max_id) {
