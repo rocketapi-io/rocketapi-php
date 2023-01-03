@@ -1,7 +1,6 @@
 {
   "name": "rocketapi/rocketapi",
   "description": "RocketAPI PHP SDK",
-  "version": "1.0.3",
   "license": "MIT",
   "authors": [
     {
