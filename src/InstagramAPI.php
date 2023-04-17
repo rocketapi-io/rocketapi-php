@@ -354,4 +354,14 @@
             }
             return $this->request('instagram/audio/get_media', $payload);
         }
+
+        /**
+         * @throws Exceptions\NotFoundException
+         * @throws Exceptions\BadResponseException
+         */
+        public function getUserAbout($user_id) {
+            return $this->request('instagram/user/get_about', [
+                'id' => $user_id,
+            ]);
+        }
     }
