@@ -347,6 +347,18 @@
          * @throws Exceptions\NotFoundException
          * @throws Exceptions\BadResponseException
          */
+        public function getCommentReplies($comment_id, $media_id, $max_id=null) {
+            $payload = ['id' => $comment_id, 'media_id' => $media_id];
+            if ($max_id) {
+                $payload['max_id'] = $max_id;
+            }
+            return $this->request('instagram/comment/get_replies', $payload);
+        }
+
+        /**
+         * @throws Exceptions\NotFoundException
+         * @throws Exceptions\BadResponseException
+         */
         public function getAudioMedia($audio_id, $max_id=null) {
             $payload = ['id' => $audio_id];
             if ($max_id) {
