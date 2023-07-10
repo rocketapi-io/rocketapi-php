@@ -32,7 +32,7 @@
          * @throws Exceptions\NotFoundException
          * @throws Exceptions\BadResponseException
          */
-        public function search_users($query, $rank_token=null, $page_token=null) {
+        public function searchUsers($query, $rank_token=null, $page_token=null) {
             $payload = [
                 'query' => $query,
             ];
