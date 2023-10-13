@@ -73,8 +73,8 @@
          * @throws Exceptions\NotFoundException
          * @throws Exceptions\BadResponseException
          */
-        public function getUserClips($user_id, $max_id=null) {
-            $payload = ['id' => $user_id];
+        public function getUserClips($user_id, $count=12, $max_id=null) {
+            $payload = ['id' => $user_id, 'count' => $count];
             if ($max_id) {
                 $payload['max_id'] = $max_id;
             }
