@@ -4,7 +4,7 @@
     class InstagramAPI extends RocketAPI {
         public function __construct($token)
         {
-            parent::__construct($token);
+            parent::__construct($token, true);
         }
 
         /**
@@ -374,6 +374,46 @@
         public function getUserAbout($user_id) {
             return $this->request('instagram/user/get_about', [
                 'id' => $user_id,
+            ]);
+        }
+
+        /**
+         * @throws Exceptions\NotFoundException
+         * @throws Exceptions\BadResponseException
+         */
+        public function searchUsers($query) {
+            return $this->request('instagram/user/search', [
+                'query' => $query,
+            ]);
+        }
+
+        /**
+         * @throws Exceptions\NotFoundException
+         * @throws Exceptions\BadResponseException
+         */
+        public function searchHashtags($query) {
+            return $this->request('instagram/hashtag/search', [
+                'query' => $query,
+            ]);
+        }
+
+        /**
+         * @throws Exceptions\NotFoundException
+         * @throws Exceptions\BadResponseException
+         */
+        public function searchLocations($query) {
+            return $this->request('instagram/location/search', [
+                'query' => $query,
+            ]);
+        }
+
+        /**
+         * @throws Exceptions\NotFoundException
+         * @throws Exceptions\BadResponseException
+         */
+        public function searchAudios($query) {
+            return $this->request('instagram/audio/search', [
+                'query' => $query,
             ]);
         }
     }

@@ -5,7 +5,7 @@
     {
         public function __construct($token)
         {
-            parent::__construct($token);
+            parent::__construct($token, true);
         }
 
         /**
