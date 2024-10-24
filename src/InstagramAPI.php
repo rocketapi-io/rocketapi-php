@@ -277,13 +277,16 @@
          * @throws Exceptions\NotFoundException
          * @throws Exceptions\BadResponseException
          */
-        public function getLocationMedia($location_id, $page=null, $max_id=null) {
+        public function getLocationMedia($location_id, $page=null, $max_id=null, $tab=null) {
             $payload = ['id' => $location_id];
             if ($page) {
                 $payload['page'] = $page;
             }
             if ($max_id) {
                 $payload['max_id'] = $max_id;
+            }
+            if ($tab) {
+                $payload['tab'] = $tab;
             }
             return $this->request('instagram/location/get_media', $payload);
         }
@@ -371,6 +374,18 @@
          * @throws Exceptions\NotFoundException
          * @throws Exceptions\BadResponseException
          */
+        public function getAudioMediaByCanonicalId($audio_canonical_id, $max_id=null) {
+            $payload = ['id' => $audio_canonical_id];
+            if ($max_id) {
+                $payload['max_id'] = $max_id;
+            }
+            return $this->request('instagram/audio/get_media_by_canonical_id', $payload);
+        }
+
+        /**
+         * @throws Exceptions\NotFoundException
+         * @throws Exceptions\BadResponseException
+         */
         public function getUserAbout($user_id) {
             return $this->request('instagram/user/get_about', [
                 'id' => $user_id,
@@ -413,6 +428,17 @@
          */
         public function searchAudios($query) {
             return $this->request('instagram/audio/search', [
+                'query' => $query,
+            ]);
+        }
+
+
+        /**
+         * @throws Exceptions\NotFoundException
+         * @throws Exceptions\BadResponseException
+         */
+        public function searchClips($query) {
+            return $this->request('instagram/media/search_clips', [
                 'query' => $query,
             ]);
         }
