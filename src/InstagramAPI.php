@@ -225,6 +225,16 @@
          * @throws Exceptions\NotFoundException
          * @throws Exceptions\BadResponseException
          */
+        public function getMediaLikesById($media_id) {
+            return $this->request('instagram/media/get_likes_by_id', [
+                'id' => $media_id,
+            ]);
+        }
+
+        /**
+         * @throws Exceptions\NotFoundException
+         * @throws Exceptions\BadResponseException
+         */
         public function getMediaComments($media_id, $can_support_threading=true, $min_id=null) {
             $payload = ['id' => $media_id, 'can_support_threading' => $can_support_threading];
             if ($min_id) {
@@ -380,6 +390,16 @@
                 $payload['max_id'] = $max_id;
             }
             return $this->request('instagram/audio/get_media_by_canonical_id', $payload);
+        }
+
+        /**
+         * @throws Exceptions\NotFoundException
+         * @throws Exceptions\BadResponseException
+         */
+        public function getLiveInfo($broadcast_id) {
+            return $this->request('instagram/live/get_info', [
+                'id' => $broadcast_id,
+            ]);
         }
 
         /**

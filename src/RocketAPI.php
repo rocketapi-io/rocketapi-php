@@ -5,7 +5,7 @@
         private $base_url = "https://v1.rocketapi.io/";
         private $token;
         private $max_timeout = 30;
-        private $version = "1.0.8";
+        private $version = "1.0.9";
         private $is_debug = false;  // Set true if you want to debug your requests
 
         public function __construct($token, $is_debug = false) {
