@@ -263,6 +263,17 @@
             ]);
         }
 
+
+        /**
+         * @throws Exceptions\NotFoundException
+         * @throws Exceptions\BadResponseException
+         */
+        public function getMediaIdByShare($share) {
+            return $this->request('instagram/media/get_id_by_share', [
+                'share' => $share,
+            ]);
+        }
+
         /**
          * @throws Exceptions\NotFoundException
          * @throws Exceptions\BadResponseException
